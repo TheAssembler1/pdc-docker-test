@@ -1,0 +1,20 @@
+# Ignore Docker build output (if you build images locally and output files)
+**/build/
+**/dist/
+
+# Ignore common OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor/IDE files (add based on your editor)
+.vscode/
+*.swp
+*.swo
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore shell history and environment files
+*.env
+*.sh_history
