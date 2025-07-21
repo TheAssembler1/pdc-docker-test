@@ -2,8 +2,8 @@ FROM pdc-base
 
 WORKDIR /opt
 
-# Clone the PDC repo and checkout develop branch
-RUN git clone --branch develop https://github.com/hpc-io/pdc.git
+# Clone the PDC repo and checkout stable branch
+RUN git clone --branch stable https://github.com/hpc-io/pdc.git
 
 WORKDIR /opt/pdc
 

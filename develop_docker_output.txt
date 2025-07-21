@@ -1,0 +1,515 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 438B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/pdc-base:latest
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/7] FROM docker.io/library/pdc-base:latest
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 39B done
+#5 DONE 0.0s
+
+#6 [3/7] RUN git clone --branch develop https://github.com/hpc-io/pdc.git
+#6 CACHED
+
+#7 [4/7] WORKDIR /opt/pdc
+#7 CACHED
+
+#8 [5/7] COPY ../build_and_test.sh /opt/pdc/build_and_test.sh
+#8 CACHED
+
+#9 [2/7] WORKDIR /opt
+#9 CACHED
+
+#10 [6/7] RUN chmod +x /opt/pdc/build_and_test.sh
+#10 CACHED
+
+#11 [7/7] RUN /opt/pdc/build_and_test.sh
+#11 0.092   File: /opt/pdc
+#11 0.092   Size: 4096      	Blocks: 16         IO Block: 4096   directory
+#11 0.092 Device: 7dh/125d	Inode: 6314031     Links: 1
+#11 0.092 Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+#11 0.092 Access: 2025-07-21 17:25:51.823436306 +0000
+#11 0.092 Modify: 2025-07-21 17:25:05.014995906 +0000
+#11 0.092 Change: 2025-07-21 17:25:05.123793836 +0000
+#11 0.092  Birth: 2025-07-21 17:25:05.123315491 +0000
+#11 0.092 Building with PDC_ENABLE_PROFILING=ON
+#11 0.166 -- The C compiler identification is GNU 11.4.0
+#11 0.173 -- Detecting C compiler ABI info
+#11 0.232 -- Detecting C compiler ABI info - done
+#11 0.237 -- Check for working C compiler: /usr/bin/mpicc - skipped
+#11 0.238 -- Detecting C compile features
+#11 0.238 -- Detecting C compile features - done
+#11 0.238 -- Setting build type to 'RelWithDebInfo' as none was specified.
+#11 0.238 -- GCC detected, setting additional flags
+#11 0.337 -- Found MPI_C: /usr/bin/mpicc (found version "4.0") 
+#11 0.337 -- Found MPI: TRUE (found version "4.0")  
+#11 0.338 -- Looking for malloc_usable_size
+#11 0.420 -- Looking for malloc_usable_size - found
+#11 0.421 -- Looking for sys/types.h
+#11 0.498 -- Looking for sys/types.h - found
+#11 0.498 -- Looking for stdint.h
+#11 0.573 -- Looking for stdint.h - found
+#11 0.573 -- Looking for stddef.h
+#11 0.645 -- Looking for stddef.h - found
+#11 0.645 -- Check size of float
+#11 0.717 -- Check size of float - done
+#11 0.718 -- Check size of double
+#11 0.791 -- Check size of double - done
+#11 0.791 -- Check size of char
+#11 0.875 -- Check size of char - done
+#11 0.875 -- Check size of short
+#11 0.949 -- Check size of short - done
+#11 0.950 -- Check size of int
+#11 1.031 -- Check size of int - done
+#11 1.031 -- Check size of long
+#11 1.114 -- Check size of long - done
+#11 1.115 -- Check size of long long
+#11 1.199 -- Check size of long long - done
+#11 1.199 -- Check size of unsigned
+#11 1.272 -- Check size of unsigned - done
+#11 1.273 -- Check size of unsigned long
+#11 1.349 -- Check size of unsigned long - done
+#11 1.349 -- Check size of unsigned long long
+#11 1.428 -- Check size of unsigned long long - done
+#11 1.428 -- Check size of int64_t
+#11 1.507 -- Check size of int64_t - done
+#11 1.507 -- Check size of uint64_t
+#11 1.586 -- Check size of uint64_t - done
+#11 1.589 -- mercury dir = /opt/mercury-install/share/cmake/mercury
+#11 1.589 -- mercury include dir = /opt/mercury-install/include
+#11 1.589 -- mercury lib = /opt/mercury-install/lib/libmercury.so;/opt/mercury-install/lib/libna.so;/opt/mercury-install/lib/libmercury_util.so
+#11 1.589 -- Found MERCURY: /opt/mercury-install/lib/libmercury.so  
+#11 1.590 -- ===MERCURY_INCLUDE_DIRS: /opt/mercury-install/include
+#11 1.590 -- ===PDC_EXT_INCLUDE_DEPENDENCIES: /opt/mercury-install/include
+#11 1.590 -- ===PDC_COMMONS_INCLUDE_DIRS: /opt/pdc/src/commons/collections/include;/opt/pdc/src/commons/collections/libhl/include;/opt/pdc/src/commons/file/include;/opt/pdc/src/commons/generic/include;/opt/pdc/src/commons/include;/opt/pdc/src/commons/index/dart/include;/opt/pdc/src/commons/index/dart/index/idioms/include;/opt/pdc/src/commons/logging/include;/opt/pdc/src/commons/profiling/include;/opt/pdc/src/commons/query/include;/opt/pdc/src/commons/serde/bulki/include;/opt/pdc/src/commons/utils/include;/opt/pdc/build;/opt/pdc;/opt/mercury-install/include
+#11 1.591 -- ===PDC_COMMONS_SOURCES: /opt/pdc/src/commons/collections/art.c;/opt/pdc/src/commons/collections/libhl/linklist.c;/opt/pdc/src/commons/collections/libhl/rbtree.c;/opt/pdc/src/commons/collections/pdc_compare.c;/opt/pdc/src/commons/collections/pdc_deque.c;/opt/pdc/src/commons/collections/pdc_hash.c;/opt/pdc/src/commons/collections/pdc_hash_table.c;/opt/pdc/src/commons/collections/pdc_set.c;/opt/pdc/src/commons/collections/pdc_stack.c;/opt/pdc/src/commons/collections/pdc_vector.c;/opt/pdc/src/commons/file/bin_file_ops.c;/opt/pdc/src/commons/file/common_io.c;/opt/pdc/src/commons/generic/pdc_generic.c;/opt/pdc/src/commons/index/dart/dart_algo.c;/opt/pdc/src/commons/index/dart/dart_core.c;/opt/pdc/src/commons/index/dart/dart_math.c;/opt/pdc/src/commons/index/dart/dart_utils.c;/opt/pdc/src/commons/index/dart/index/idioms/idioms_local_index.c;/opt/pdc/src/commons/index/dart/index/idioms/idioms_persistence.c;/opt/pdc/src/commons/logging/pdc_logger.c;/opt/pdc/src/commons/profiling/pdc_hashtab.c;/opt/pdc/src/commons/profiling/pdc_stack_ops.c;/opt/pdc/src/commons/query/qc_parser.c;/opt/pdc/src/commons/serde/bulki/bulki.c;/opt/pdc/src/commons/serde/bulki/bulki_endianness_util.c;/opt/pdc/src/commons/serde/bulki/bulki_serde.c;/opt/pdc/src/commons/serde/bulki/bulki_vle_util.c;/opt/pdc/src/commons/utils/pdc_malloc.c;/opt/pdc/src/commons/utils/pdc_timing.c;/opt/pdc/src/commons/utils/query_utils.c;/opt/pdc/src/commons/utils/string_utils.c;/opt/pdc/src/commons/utils/thpool.c;/opt/pdc/src/commons/utils/timer_utils.c
+#11 1.591 -- ===PDC_COMMONS_TEST_SRC: /opt/pdc/src/commons/collections/pdc_set_test.c;/opt/pdc/src/commons/index/dart/dart_core_test.c;/opt/pdc/src/commons/index/dart/index/idioms/idioms_local_index_test.c;/opt/pdc/src/commons/query/qc_parser_test.c;/opt/pdc/src/commons/serde/bulki/bulki_serde_test.c;/opt/pdc/src/commons/utils/query_utils_test.c
+#11 1.591 -- ===_test_name: pdc_set_test
+#11 1.591 -- ===_test_name: dart_core_test
+#11 1.591 -- ===_test_name: idioms_local_index_test
+#11 1.591 -- ===_test_name: qc_parser_test
+#11 1.591 -- ===_test_name: bulki_serde_test
+#11 1.591 -- ===_test_name: query_utils_test
+#11 1.592 -- mercury dir = /opt/mercury-install/share/cmake/mercury
+#11 1.592 -- mercury include dir = /opt/mercury-install/include
+#11 1.592 -- mercury lib = /opt/mercury-install/lib/libmercury.so;/opt/mercury-install/lib/libna.so;/opt/mercury-install/lib/libmercury_util.so
+#11 1.593 -- PDC_BUILD_INCLUDE_DEPENDENCIES: /opt/pdc/src/commons;/opt/pdc/build/src/commons;/opt/mercury-install/include;/opt/pdc/src/commons/collections/include;/opt/pdc/src/commons/collections/libhl/include;/opt/pdc/src/commons/file/include;/opt/pdc/src/commons/generic/include;/opt/pdc/src/commons/include;/opt/pdc/src/commons/index/dart/include;/opt/pdc/src/commons/index/dart/index/idioms/include;/opt/pdc/src/commons/logging/include;/opt/pdc/src/commons/profiling/include;/opt/pdc/src/commons/query/include;/opt/pdc/src/commons/serde/bulki/include;/opt/pdc/src/commons/utils/include;/opt/pdc/build;/opt/pdc;/opt/mercury-install/include;/opt/pdc/build;/opt/pdc;/opt/pdc/src/api;/opt/pdc/build/src/api;/opt/pdc/src/server/include;/opt/pdc/src/server/pdc_server_region;/opt/pdc/src/server/pdc_server_region/include;/opt/pdc/src/server/pdc_server_analysis/include;/opt/pdc/src/server/dablooms;/opt/pdc/src/api/include;/opt/pdc/src/api/pdc_obj/include;/opt/pdc/src/api/pdc_region/include;/opt/pdc/src/api/pdc_query/include;/opt/pdc/src/api/pdc_transform/include;/opt/pdc/src/api/pdc_analysis/include;/opt/pdc/src/api/profiling/include;/opt/pdc/src/utils/include
+#11 1.593 -- PDC_EXPORTED_LIBS: 
+#11 1.593 -- PDC_EXT_LIB_DEPENDENCIES: /opt/mercury-install/lib/libmercury.so;/opt/mercury-install/lib/libna.so;/opt/mercury-install/lib/libmercury_util.so
+#11 1.593 -- PDC_COMMONS_LIBRARIES: pdc_commons
+#11 1.593 -- mercury dir = /opt/mercury-install/share/cmake/mercury
+#11 1.593 -- mercury include dir = /opt/mercury-install/include
+#11 1.593 -- mercury lib = /opt/mercury-install/lib/libmercury.so;/opt/mercury-install/lib/libna.so;/opt/mercury-install/lib/libmercury_util.so
+#11 1.596 -- Found UUID: /usr/lib/x86_64-linux-gnu/libuuid.so
+#11 1.597 -- mercury dir = /opt/mercury-install/share/cmake/mercury
+#11 1.597 -- mercury include dir = /opt/mercury-install/include
+#11 1.597 -- mercury lib = /opt/mercury-install/lib/libmercury.so;/opt/mercury-install/lib/libna.so;/opt/mercury-install/lib/libmercury_util.so
+#11 1.602 -- UUID library found: /usr/lib/x86_64-linux-gnu/libuuid.so
+#11 1.602 -- UUID include directory: 
+#11 1.609 -- Configuring done
+#11 1.705 -- Generating done
+#11 1.709 -- Build files have been written to: /opt/pdc/build
+#11 1.748 [  0%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/pdc_hash_table.c.o
+#11 1.750 [  2%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/pdc_hash.c.o
+#11 1.750 [  2%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/pdc_set.c.o
+#11 1.751 [  2%] Building C object src/commons/CMakeFiles/pdc_commons.dir/file/common_io.c.o
+#11 1.751 [  1%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/pdc_compare.c.o
+#11 1.751 [  2%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/pdc_stack.c.o
+#11 1.751 [  1%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/pdc_vector.c.o
+#11 1.751 [  1%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/libhl/linklist.c.o
+#11 1.751 [  4%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/pdc_deque.c.o
+#11 1.751 [  5%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/art.c.o
+#11 1.751 [  6%] Building C object src/commons/CMakeFiles/pdc_commons.dir/generic/pdc_generic.c.o
+#11 1.751 [  6%] Building C object src/commons/CMakeFiles/pdc_commons.dir/collections/libhl/rbtree.c.o
+#11 1.755 [  6%] Building C object src/commons/CMakeFiles/pdc_commons.dir/file/bin_file_ops.c.o
+#11 1.756 [  6%] Building C object src/commons/CMakeFiles/pdc_commons.dir/index/dart/dart_algo.c.o
+#11 1.937 [  7%] Building C object src/commons/CMakeFiles/pdc_commons.dir/index/dart/dart_core.c.o
+#11 1.949 [  8%] Building C object src/commons/CMakeFiles/pdc_commons.dir/index/dart/dart_utils.c.o
+#11 1.953 [  8%] Building C object src/commons/CMakeFiles/pdc_commons.dir/index/dart/index/idioms/idioms_local_index.c.o
+#11 1.954 [  8%] Building C object src/commons/CMakeFiles/pdc_commons.dir/index/dart/dart_math.c.o
+#11 1.972 [  8%] Building C object src/commons/CMakeFiles/pdc_commons.dir/index/dart/index/idioms/idioms_persistence.c.o
+#11 1.995 [  9%] Building C object src/commons/CMakeFiles/pdc_commons.dir/profiling/pdc_hashtab.c.o
+#11 1.995 [  9%] Building C object src/commons/CMakeFiles/pdc_commons.dir/logging/pdc_logger.c.o
+#11 1.997 [ 10%] Building C object src/commons/CMakeFiles/pdc_commons.dir/profiling/pdc_stack_ops.c.o
+#11 2.029 [ 10%] Building C object src/commons/CMakeFiles/pdc_commons.dir/query/qc_parser.c.o
+#11 2.038 [ 10%] Building C object src/commons/CMakeFiles/pdc_commons.dir/serde/bulki/bulki.c.o
+#11 2.062 [ 11%] Building C object src/commons/CMakeFiles/pdc_commons.dir/serde/bulki/bulki_endianness_util.c.o
+#11 2.129 [ 11%] Building C object src/commons/CMakeFiles/pdc_commons.dir/serde/bulki/bulki_serde.c.o
+#11 2.165 [ 12%] Building C object src/commons/CMakeFiles/pdc_commons.dir/serde/bulki/bulki_vle_util.c.o
+#11 2.169 [ 12%] Building C object src/commons/CMakeFiles/pdc_commons.dir/utils/pdc_malloc.c.o
+#11 2.221 [ 13%] Building C object src/commons/CMakeFiles/pdc_commons.dir/utils/pdc_timing.c.o
+#11 2.262 [ 13%] Building C object src/commons/CMakeFiles/pdc_commons.dir/utils/query_utils.c.o
+#11 2.287 [ 13%] Building C object src/commons/CMakeFiles/pdc_commons.dir/utils/string_utils.c.o
+#11 2.291 [ 14%] Building C object src/commons/CMakeFiles/pdc_commons.dir/utils/thpool.c.o
+#11 2.306 [ 14%] Building C object src/commons/CMakeFiles/pdc_commons.dir/utils/timer_utils.c.o
+#11 2.521 [ 15%] Linking C shared library ../../bin/libpdc_commons.so
+#11 2.602 [ 15%] Built target pdc_commons
+#11 2.613 [ 15%] Building C object src/commons/CMakeFiles/pdc_set_test.dir/collections/pdc_set_test.c.o
+#11 2.614 [ 16%] Building C object src/commons/CMakeFiles/dart_core_test.dir/index/dart/dart_core_test.c.o
+#11 2.619 [ 18%] Building C object src/commons/CMakeFiles/bulki_serde_test.dir/serde/bulki/bulki_serde_test.c.o
+#11 2.619 [ 18%] Building C object src/commons/CMakeFiles/idioms_local_index_test.dir/index/dart/index/idioms/idioms_local_index_test.c.o
+#11 2.619 [ 18%] Building C object src/commons/CMakeFiles/qc_parser_test.dir/query/qc_parser_test.c.o
+#11 2.619 [ 19%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_server_metadata.c.o
+#11 2.620 [ 20%] Building C object src/commons/CMakeFiles/query_utils_test.dir/utils/query_utils_test.c.o
+#11 2.621 [ 20%] Building C object src/api/CMakeFiles/pdc.dir/pdc.c.o
+#11 2.621 [ 20%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_client_server_common.c.o
+#11 2.621 [ 21%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_server.c.o
+#11 2.621 [ 21%] Building C object src/api/CMakeFiles/pdc.dir/pdc_client_connect.c.o
+#11 2.622 [ 21%] Building C object src/api/CMakeFiles/pdc.dir/pdc_obj/pdc_prop.c.o
+#11 2.626 [ 22%] Building C object src/api/CMakeFiles/pdc.dir/pdc_obj/pdc_cont.c.o
+#11 2.628 [ 22%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_server_metadata_index.c.o
+#11 2.809 [ 23%] Linking C executable ../../bin/pdc_set_test
+#11 2.833 [ 23%] Linking C executable ../../bin/dart_core_test
+#11 2.833 [ 23%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/dablooms/pdc_dablooms.c.o
+#11 2.851 [ 23%] Linking C executable ../../bin/bulki_serde_test
+#11 2.863 [ 24%] Linking C executable ../../bin/query_utils_test
+#11 2.864 [ 24%] Linking C executable ../../bin/qc_parser_test
+#11 2.876 [ 25%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/dablooms/pdc_murmur.c.o
+#11 2.901 [ 25%] Built target pdc_set_test
+#11 2.910 [ 25%] Building C object src/api/CMakeFiles/pdc.dir/pdc_obj/pdc_obj.c.o
+#11 2.939 [ 25%] Built target dart_core_test
+#11 2.944 [ 25%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_server_analysis/pdc_server_analysis.c.o
+#11 2.952 [ 25%] Built target qc_parser_test
+#11 2.960 [ 26%] Building C object src/api/CMakeFiles/pdc.dir/pdc_analysis/pdc_analysis_and_transforms_connect.c.o
+#11 2.961 [ 27%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_server_region/pdc_server_data.c.o
+#11 2.972 [ 27%] Built target query_utils_test
+#11 2.978 [ 27%] Built target bulki_serde_test
+#11 2.980 [ 27%] Building C object src/api/CMakeFiles/pdc.dir/pdc_analysis/pdc_analysis_common.c.o
+#11 2.987 [ 27%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_server_region/pdc_server_region_cache.c.o
+#11 2.991 [ 28%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_server_region/pdc_server_region_transfer.c.o
+#11 2.991 [ 28%] Linking C executable ../../bin/idioms_local_index_test
+#11 3.064 [ 28%] Built target idioms_local_index_test
+#11 3.073 [ 29%] Building C object src/api/CMakeFiles/pdc.dir/pdc_analysis/pdc_analysis.c.o
+#11 3.126 [ 29%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/pdc_server_region/pdc_server_region_transfer_metadata_query.c.o
+#11 3.203 [ 29%] Building C object src/api/CMakeFiles/pdc.dir/pdc_analysis/pdc_hist_pkg.c.o
+#11 3.238 [ 29%] Building C object src/api/CMakeFiles/pdc.dir/pdc_obj/pdc_mpi.c.o
+#11 3.270 [ 30%] Building C object src/api/CMakeFiles/pdc.dir/pdc_query/pdc_query.c.o
+#11 3.290 [ 30%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/__/utils/pdc_region_utils.c.o
+#11 3.332 [ 30%] Building C object src/api/CMakeFiles/pdc.dir/pdc_region/pdc_region.c.o
+#11 3.446 [ 31%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/__/api/pdc_analysis/pdc_analysis_common.c.o
+#11 3.490 [ 31%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/__/api/pdc_transform/pdc_transforms_common.c.o
+#11 3.514 [ 32%] Building C object src/server/CMakeFiles/pdc_server_lib.dir/__/api/pdc_analysis/pdc_hist_pkg.c.o
+#11 3.539 [ 33%] Building C object src/api/CMakeFiles/pdc.dir/pdc_region/pdc_region_transfer.c.o
+#11 3.546 [ 33%] Building C object src/api/CMakeFiles/pdc.dir/pdc_transform/pdc_transform.c.o
+#11 3.551 [ 34%] Building C object src/api/CMakeFiles/pdc.dir/pdc_transform/pdc_transforms_common.c.o
+#11 3.561 [ 34%] Building C object src/api/CMakeFiles/pdc.dir/__/server/pdc_client_server_common.c.o
+#11 3.638 [ 34%] Building C object src/api/CMakeFiles/pdc.dir/__/server/pdc_server_region/pdc_server_region_transfer.c.o
+#11 3.699 [ 35%] Building C object src/api/CMakeFiles/pdc.dir/__/server/pdc_server_region/pdc_server_region_cache.c.o
+#11 3.712 [ 35%] Building C object src/api/CMakeFiles/pdc.dir/__/server/pdc_server_region/pdc_server_region_transfer_metadata_query.c.o
+#11 3.720 [ 36%] Building C object src/api/CMakeFiles/pdc.dir/__/utils/pdc_interface.c.o
+#11 3.805 [ 36%] Building C object src/api/CMakeFiles/pdc.dir/__/utils/pdc_region_utils.c.o
+#11 5.350 [ 36%] Linking C shared library ../../bin/libpdc_server_lib.so
+#11 5.433 [ 36%] Built target pdc_server_lib
+#11 5.448 [ 36%] Building C object src/server/CMakeFiles/pdc_server_metadata_index_test.dir/pdc_server_metadata_index_test.c.o
+#11 5.450 [ 37%] Building C object src/server/CMakeFiles/pdc_server.dir/pdc_server_main.c.o
+#11 5.579 [ 37%] Linking C executable ../../bin/pdc_server
+#11 5.637 [ 37%] Built target pdc_server
+#11 5.665 [ 38%] Linking C executable ../../bin/pdc_server_metadata_index_test
+#11 5.735 [ 38%] Built target pdc_server_metadata_index_test
+#11 6.207 [ 38%] Linking C shared library ../../bin/libpdc.so
+#11 6.307 [ 38%] Built target pdc
+#11 6.325 [ 38%] Building C object src/tests/CMakeFiles/cont_life.dir/cont/cont_life.c.o
+#11 6.326 [ 38%] Building C object src/api/CMakeFiles/close_server.dir/close_server.c.o
+#11 6.326 [ 38%] Building C object src/tests/CMakeFiles/open_cont.dir/cont/open_cont.c.o
+#11 6.327 [ 38%] Building C object src/tests/CMakeFiles/pdc_init.dir/misc/pdc_init.c.o
+#11 6.328 [ 38%] Building C object src/tests/CMakeFiles/read_obj.dir/obj/read_obj.c.o
+#11 6.328 [ 38%] Building C object src/tests/CMakeFiles/create_obj.dir/obj/create_obj.c.o
+#11 6.328 [ 38%] Building C object src/tests/CMakeFiles/cont_del.dir/cont/cont_del.c.o
+#11 6.328 [ 39%] Building C object src/tests/CMakeFiles/cont_info.dir/cont/cont_info.c.o
+#11 6.328 [ 38%] Building C object src/tests/CMakeFiles/read_obj_shared.dir/obj/read_obj_shared.c.o
+#11 6.329 [ 39%] Building C object src/tests/CMakeFiles/cont_getid.dir/cont/cont_getid.c.o
+#11 6.331 [ 40%] Building C object src/tests/CMakeFiles/cont_tags.dir/cont/cont_tags.c.o
+#11 6.331 [ 40%] Building C object src/tests/CMakeFiles/cont_iter.dir/cont/cont_iter.c.o
+#11 6.333 [ 40%] Building C object src/tests/CMakeFiles/consistency_semantics.dir/misc/consistency_semantics.c.o
+#11 6.333 [ 40%] Building C object src/tests/CMakeFiles/dup_prop.dir/prop/dup_prop.c.o
+#11 6.553 [ 41%] Linking C executable ../../bin/cont_del
+#11 6.553 [ 42%] Linking C executable ../../bin/open_cont
+#11 6.554 [ 41%] Linking C executable ../../bin/pdc_init
+#11 6.561 [ 43%] Linking C executable ../../bin/cont_life
+#11 6.571 [ 43%] Linking C executable ../../bin/dup_prop
+#11 6.580 [ 44%] Linking C executable ../../bin/create_obj
+#11 6.584 [ 44%] Linking C executable ../../bin/cont_iter
+#11 6.584 [ 45%] Linking C executable ../../bin/close_server
+#11 6.596 [ 45%] Linking C executable ../../bin/cont_info
+#11 6.620 [ 46%] Linking C executable ../../bin/read_obj_shared
+#11 6.621 [ 47%] Linking C executable ../../bin/cont_tags
+#11 6.650 [ 47%] Linking C executable ../../bin/cont_getid
+#11 6.654 [ 47%] Built target cont_del
+#11 6.654 [ 47%] Built target pdc_init
+#11 6.657 [ 47%] Built target open_cont
+#11 6.666 [ 47%] Built target cont_life
+#11 6.670 [ 47%] Built target dup_prop
+#11 6.677 [ 47%] Built target close_server
+#11 6.678 [ 48%] Building C object src/tests/CMakeFiles/open_obj.dir/obj/open_obj.c.o
+#11 6.681 [ 48%] Building C object src/tests/CMakeFiles/open_existing_obj.dir/obj/open_existing_obj.c.o
+#11 6.689 [ 48%] Building C object src/tests/CMakeFiles/obj_iter.dir/obj/obj_iter.c.o
+#11 6.690 [ 49%] Linking C executable ../../bin/consistency_semantics
+#11 6.690 [ 49%] Building C object src/tests/CMakeFiles/obj_info.dir/obj/obj_info.c.o
+#11 6.693 [ 50%] Built target create_obj
+#11 6.693 [ 50%] Building C object src/tests/CMakeFiles/obj_del.dir/obj/obj_del.c.o
+#11 6.698 [ 50%] Building C object src/tests/CMakeFiles/obj_life.dir/obj/obj_life.c.o
+#11 6.711 [ 50%] Built target cont_info
+#11 6.711 [ 50%] Built target cont_iter
+#11 6.718 [ 51%] Building C object src/tests/CMakeFiles/obj_buf.dir/obj/obj_buf.c.o
+#11 6.725 [ 51%] Built target read_obj_shared
+#11 6.726 [ 51%] Built target cont_tags
+#11 6.733 [ 51%] Building C object src/tests/CMakeFiles/obj_tags.dir/obj/obj_tags.c.o
+#11 6.737 [ 52%] Building C object src/tests/CMakeFiles/obj_put_data.dir/obj/obj_put_data.c.o
+#11 6.743 [ 53%] Linking C executable ../../bin/read_obj
+#11 6.748 [ 54%] Building C object src/tests/CMakeFiles/read_write_perf.dir/misc/read_write_perf.c.o
+#11 6.749 [ 54%] Building C object src/tests/CMakeFiles/obj_get_data.dir/obj/obj_get_data.c.o
+#11 6.761 [ 54%] Built target cont_getid
+#11 6.780 [ 54%] Built target consistency_semantics
+#11 6.784 [ 54%] Building C object src/tests/CMakeFiles/read_write_col_perf.dir/misc/read_write_col_perf.c.o
+#11 6.807 [ 54%] Building C object src/tests/CMakeFiles/region_transfer_partial.dir/region/region_transfer_partial.c.o
+#11 6.861 [ 54%] Built target read_obj
+#11 6.887 [ 54%] Building C object src/tests/CMakeFiles/region_transfer_2D_partial.dir/region/region_transfer_2D_partial.c.o
+#11 6.923 [ 54%] Linking C executable ../../bin/obj_life
+#11 6.950 [ 54%] Linking C executable ../../bin/obj_del
+#11 6.952 [ 54%] Linking C executable ../../bin/open_existing_obj
+#11 6.958 [ 54%] Linking C executable ../../bin/open_obj
+#11 6.968 [ 55%] Linking C executable ../../bin/obj_iter
+#11 6.972 [ 55%] Linking C executable ../../bin/obj_buf
+#11 6.987 [ 55%] Linking C executable ../../bin/obj_put_data
+#11 6.988 [ 56%] Linking C executable ../../bin/obj_info
+#11 7.029 [ 57%] Linking C executable ../../bin/obj_get_data
+#11 7.039 [ 57%] Built target obj_life
+#11 7.039 [ 57%] Built target open_existing_obj
+#11 7.056 [ 57%] Built target open_obj
+#11 7.064 [ 57%] Built target obj_del
+#11 7.068 [ 57%] Building C object src/tests/CMakeFiles/region_transfer_3D_partial.dir/region/region_transfer_3D_partial.c.o
+#11 7.069 [ 58%] Building C object src/tests/CMakeFiles/region_transfer_overlap.dir/region/region_transfer_overlap.c.o
+#11 7.077 [ 58%] Built target obj_iter
+#11 7.079 [ 58%] Building C object src/tests/CMakeFiles/region_transfer_overlap_2D.dir/region/region_transfer_overlap_2D.c.o
+#11 7.090 [ 58%] Built target obj_info
+#11 7.095 [ 58%] Building C object src/tests/CMakeFiles/region_transfer_overlap_3D.dir/region/region_transfer_overlap_3D.c.o
+#11 7.095 [ 58%] Built target obj_buf
+#11 7.096 [ 58%] Built target obj_put_data
+#11 7.099 [ 58%] Linking C executable ../../bin/read_write_col_perf
+#11 7.105 [ 59%] Building C object src/tests/CMakeFiles/region_transfer_merge.dir/region/region_transfer_merge.c.o
+#11 7.112 [ 60%] Linking C executable ../../bin/obj_tags
+#11 7.116 [ 60%] Building C object src/tests/CMakeFiles/delete_obj.dir/obj/delete_obj.c.o
+#11 7.122 [ 61%] Building C object src/tests/CMakeFiles/obj_round_robin_io.dir/obj/obj_round_robin_io.c.o
+#11 7.122 [ 61%] Building C object src/tests/CMakeFiles/obj_round_robin_io_all.dir/obj/obj_round_robin_io_all.c.o
+#11 7.125 [ 61%] Linking C executable ../../bin/region_transfer_partial
+#11 7.125 [ 61%] Built target obj_get_data
+#11 7.138 [ 61%] Linking C executable ../../bin/read_write_perf
+#11 7.146 [ 61%] Building C object src/tests/CMakeFiles/vpicio.dir/misc/vpicio.c.o
+#11 7.188 [ 61%] Built target read_write_col_perf
+#11 7.198 [ 62%] Linking C executable ../../bin/region_transfer_2D_partial
+#11 7.207 [ 62%] Building C object src/tests/CMakeFiles/vpicio_mts.dir/misc/vpicio_mts.c.o
+#11 7.211 [ 62%] Built target obj_tags
+#11 7.230 [ 62%] Building C object src/tests/CMakeFiles/bdcats.dir/misc/bdcats.c.o
+#11 7.234 [ 62%] Built target read_write_perf
+#11 7.243 [ 62%] Built target region_transfer_partial
+#11 7.266 [ 63%] Building C object src/tests/CMakeFiles/bdcats_old.dir/deprecated/bdcats_old.c.o
+#11 7.266 [ 63%] Building C object src/tests/CMakeFiles/vpicio_old.dir/deprecated/vpicio_old.c.o
+#11 7.288 [ 63%] Built target region_transfer_2D_partial
+#11 7.311 [ 64%] Building C object src/tests/CMakeFiles/kvtag_add_get.dir/tags/kvtag_add_get.c.o
+#11 7.352 [ 64%] Linking C executable ../../bin/region_transfer_3D_partial
+#11 7.362 [ 64%] Linking C executable ../../bin/region_transfer_overlap
+#11 7.401 [ 65%] Linking C executable ../../bin/delete_obj
+#11 7.441 [ 65%] Linking C executable ../../bin/region_transfer_merge
+#11 7.459 [ 65%] Built target region_transfer_overlap
+#11 7.467 [ 65%] Built target region_transfer_3D_partial
+#11 7.492 [ 65%] Building C object src/tests/CMakeFiles/kvtag_query.dir/tags/kvtag_query.c.o
+#11 7.499 [ 66%] Building C object src/tests/CMakeFiles/region_transfer_query.dir/region/region_transfer_query.c.o
+#11 7.509 [ 66%] Built target delete_obj
+#11 7.522 [ 66%] Linking C executable ../../bin/obj_round_robin_io
+#11 7.541 [ 67%] Linking C executable ../../bin/region_transfer_overlap_3D
+#11 7.541 [ 68%] Building C object src/tests/CMakeFiles/region_transfer.dir/region/region_transfer.c.o
+#11 7.543 [ 69%] Linking C executable ../../bin/obj_round_robin_io_all
+#11 7.546 [ 70%] Linking C executable ../../bin/region_transfer_overlap_2D
+#11 7.555 [ 71%] Linking C executable ../../bin/vpicio_mts
+#11 7.560 [ 71%] Built target region_transfer_merge
+#11 7.593 [ 72%] Building C object src/tests/CMakeFiles/region_transfer_status.dir/region/region_transfer_status.c.o
+#11 7.614 [ 72%] Linking C executable ../../bin/kvtag_add_get
+#11 7.625 [ 72%] Linking C executable ../../bin/bdcats_old
+#11 7.628 [ 72%] Built target obj_round_robin_io
+#11 7.647 [ 72%] Built target vpicio_mts
+#11 7.647 [ 72%] Built target region_transfer_overlap_2D
+#11 7.652 [ 72%] Built target region_transfer_overlap_3D
+#11 7.654 [ 72%] Building C object src/tests/CMakeFiles/region_transfer_skewed.dir/region/region_transfer_skewed.c.o
+#11 7.663 [ 72%] Built target obj_round_robin_io_all
+#11 7.680 [ 73%] Building C object src/tests/CMakeFiles/region_transfer_write_only.dir/region/region_transfer_write_only.c.o
+#11 7.682 [ 74%] Building C object src/tests/CMakeFiles/region_transfer_read_only.dir/region/region_transfer_read_only.c.o
+#11 7.682 [ 74%] Building C object src/tests/CMakeFiles/region_transfer_2D.dir/region/region_transfer_2D.c.o
+#11 7.686 [ 74%] Building C object src/tests/CMakeFiles/region_transfer_3D.dir/region/region_transfer_3D.c.o
+#11 7.718 [ 74%] Built target kvtag_add_get
+#11 7.719 [ 74%] Linking C executable ../../bin/bdcats
+#11 7.726 [ 74%] Built target bdcats_old
+#11 7.741 [ 75%] Building C object src/tests/CMakeFiles/region_transfer_write_read.dir/region/region_transfer_write_read.c.o
+#11 7.749 [ 76%] Building C object src/tests/CMakeFiles/region_transfer_all.dir/region/region_transfer_all.c.o
+#11 7.754 [ 77%] Linking C executable ../../bin/vpicio_old
+#11 7.805 [ 77%] Linking C executable ../../bin/region_transfer_query
+#11 7.810 [ 78%] Linking C executable ../../bin/vpicio
+#11 7.823 [ 79%] Linking C executable ../../bin/kvtag_query
+#11 7.844 [ 79%] Built target vpicio_old
+#11 7.846 [ 79%] Built target bdcats
+#11 7.876 [ 80%] Building C object src/tests/CMakeFiles/region_transfer_all_2D.dir/region/region_transfer_all_2D.c.o
+#11 7.878 [ 80%] Linking C executable ../../bin/region_transfer
+#11 7.886 [ 81%] Building C object src/tests/CMakeFiles/region_transfer_all_3D.dir/region/region_transfer_all_3D.c.o
+#11 7.891 [ 81%] Built target vpicio
+#11 7.908 [ 81%] Built target region_transfer_query
+#11 7.926 [ 81%] Built target kvtag_query
+#11 7.932 [ 81%] Building C object src/tests/CMakeFiles/region_transfer_all_append.dir/region/region_transfer_all_append.c.o
+#11 7.933 [ 81%] Building C object src/tests/CMakeFiles/region_transfer_all_append_2D.dir/region/region_transfer_all_append_2D.c.o
+#11 7.951 [ 81%] Building C object src/tests/CMakeFiles/region_transfer_all_append_3D.dir/region/region_transfer_all_append_3D.c.o
+#11 7.956 [ 81%] Linking C executable ../../bin/region_transfer_read_only
+#11 7.959 [ 81%] Linking C executable ../../bin/region_transfer_skewed
+#11 7.960 [ 81%] Built target region_transfer
+#11 7.981 [ 82%] Linking C executable ../../bin/region_transfer_status
+#11 7.981 [ 82%] Building C object src/tests/CMakeFiles/region_transfer_all_split_wait.dir/region/region_transfer_all_split_wait.c.o
+#11 8.029 [ 83%] Linking C executable ../../bin/region_transfer_2D
+#11 8.032 [ 83%] Linking C executable ../../bin/region_transfer_write_only
+#11 8.032 [ 84%] Linking C executable ../../bin/region_transfer_3D
+#11 8.041 [ 84%] Built target region_transfer_skewed
+#11 8.052 [ 84%] Built target region_transfer_read_only
+#11 8.071 [ 85%] Building C object src/tests/CMakeFiles/region_transfer_set_dims.dir/region/region_transfer_set_dims.c.o
+#11 8.078 [ 85%] Building C object src/tests/CMakeFiles/region_transfer_set_dims_2D.dir/region/region_transfer_set_dims_2D.c.o
+#11 8.081 [ 85%] Built target region_transfer_status
+#11 8.126 [ 85%] Built target region_transfer_2D
+#11 8.126 [ 85%] Building C object src/tests/CMakeFiles/region_transfer_set_dims_3D.dir/region/region_transfer_set_dims_3D.c.o
+#11 8.137 [ 85%] Built target region_transfer_write_only
+#11 8.140 [ 86%] Built target region_transfer_3D
+#11 8.141 [ 86%] Building C object src/tests/CMakeFiles/query_data.dir/query/query_data.c.o
+#11 8.159 [ 86%] Linking C executable ../../bin/region_transfer_all
+#11 8.159 [ 86%] Building C object src/tests/CMakeFiles/kvtag_range_query_scale.dir/tags/kvtag_range_query_scale.c.o
+#11 8.161 [ 86%] Building C object src/tests/CMakeFiles/producer_waitall.dir/misc/producer_waitall.c.o
+#11 8.274 [ 86%] Linking C executable ../../bin/region_transfer_write_read
+#11 8.274 [ 86%] Built target region_transfer_all
+#11 8.278 [ 86%] Linking C executable ../../bin/region_transfer_all_2D
+#11 8.298 [ 86%] Building C object src/tests/CMakeFiles/kvtag_affix_query_scale.dir/tags/kvtag_affix_query_scale.c.o
+#11 8.303 [ 86%] Linking C executable ../../bin/region_transfer_all_3D
+#11 8.349 [ 86%] Linking C executable ../../bin/region_transfer_all_split_wait
+#11 8.378 [ 86%] Built target region_transfer_write_read
+#11 8.402 [ 86%] Built target region_transfer_all_2D
+#11 8.407 [ 87%] Building C object src/tests/CMakeFiles/kvtag_add_get_benchmark.dir/tags/kvtag_add_get_benchmark.c.o
+#11 8.434 [ 88%] Building C object src/tests/CMakeFiles/kvtag_add_get_scale.dir/tags/kvtag_add_get_scale.c.o
+#11 8.448 [ 88%] Built target region_transfer_all_3D
+#11 8.461 [ 88%] Linking C executable ../../bin/producer_waitall
+#11 8.465 [ 88%] Linking C executable ../../bin/query_data
+#11 8.475 [ 88%] Building C object src/tests/CMakeFiles/llsm_idioms_bench.dir/misc/llsm_idioms_bench.c.o
+#11 8.481 [ 88%] Built target region_transfer_all_split_wait
+#11 8.505 [ 88%] Building C object src/tests/CMakeFiles/idioms_ci_test.dir/misc/idioms_ci_test.c.o
+#11 8.526 [ 89%] Linking C executable ../../bin/region_transfer_all_append_2D
+#11 8.550 [ 90%] Linking C executable ../../bin/region_transfer_all_append
+#11 8.550 [ 90%] Linking C executable ../../bin/region_transfer_set_dims
+#11 8.560 [ 90%] Built target query_data
+#11 8.573 [ 90%] Built target producer_waitall
+#11 8.581 [ 91%] Linking C executable ../../bin/kvtag_range_query_scale
+#11 8.583 [ 92%] Building C object src/tests/CMakeFiles/dart_algo_sim.dir/dart/dart_algo_sim.c.o
+#11 8.583 [ 92%] Linking C executable ../../bin/region_transfer_set_dims_2D
+#11 8.597 [ 93%] Building C object src/tests/CMakeFiles/dart_attr_dist_test.dir/dart/dart_attr_dist_test.c.o
+#11 8.634 [ 93%] Built target region_transfer_all_append_2D
+#11 8.638 [ 93%] Built target region_transfer_all_append
+#11 8.646 [ 93%] Linking C executable ../../bin/region_transfer_all_append_3D
+#11 8.653 [ 93%] Built target region_transfer_set_dims
+#11 8.660 [ 93%] Building C object src/tests/CMakeFiles/dart_test.dir/dart/dart_test.c.o
+#11 8.669 [ 93%] Building C object src/tests/CMakeFiles/dart_func_test.dir/dart/dart_func_test.c.o
+#11 8.673 [ 93%] Built target kvtag_range_query_scale
+#11 8.678 [ 93%] Built target region_transfer_set_dims_2D
+#11 8.680 [ 93%] Building C object src/tests/CMakeFiles/pdcanalysis.dir/analysis/pdc_analysis_lib.c.o
+#11 8.690 [ 94%] Linking C executable ../../bin/region_transfer_set_dims_3D
+#11 8.745 [ 94%] Built target region_transfer_all_append_3D
+#11 8.761 [ 95%] Linking C executable ../../bin/kvtag_affix_query_scale
+#11 8.774 [ 95%] Built target region_transfer_set_dims_3D
+#11 8.774 [ 95%] Linking C executable ../../bin/kvtag_add_get_scale
+#11 8.825 [ 95%] Linking C executable ../../bin/kvtag_add_get_benchmark
+#11 8.827 [ 95%] Built target kvtag_affix_query_scale
+#11 8.860 [ 95%] Built target kvtag_add_get_scale
+#11 8.870 [ 95%] Linking C executable ../../bin/dart_algo_sim
+#11 8.870 [ 96%] Linking C executable ../../bin/idioms_ci_test
+#11 8.881 [ 96%] Linking C executable ../../bin/llsm_idioms_bench
+#11 8.882 [ 96%] Built target kvtag_add_get_benchmark
+#11 8.896 [ 97%] Linking C executable ../../bin/dart_func_test
+#11 8.909 [ 97%] Linking C executable ../../bin/dart_attr_dist_test
+#11 8.921 [ 97%] Built target idioms_ci_test
+#11 8.926 [ 98%] Linking C shared library ../../bin/libpdcanalysis.so
+#11 8.929 [ 98%] Built target dart_algo_sim
+#11 8.953 [ 98%] Built target llsm_idioms_bench
+#11 8.953 [ 98%] Built target dart_func_test
+#11 8.970 [ 98%] Built target dart_attr_dist_test
+#11 8.981 [ 98%] Built target pdcanalysis
+#11 9.002 [100%] Linking C executable ../../bin/dart_test
+#11 9.057 [100%] Built target dart_test
+#11 9.073 Test project /opt/pdc/build
+#11 9.075         Start   1: pdc_init
+#11 10.31   1/139 Test   #1: pdc_init .............................   Passed    1.23 sec
+#11 10.31         Start   2: dup_prop
+#11 11.52   2/139 Test   #2: dup_prop .............................   Passed    1.22 sec
+#11 11.52         Start   3: open_cont
+#11 11.75   3/139 Test   #3: open_cont ............................   Passed    0.22 sec
+#11 11.75         Start   4: cont_life
+#11 12.97   4/139 Test   #4: cont_life ............................   Passed    1.23 sec
+#11 12.98         Start   5: cont_iter
+#11 14.21   5/139 Test   #5: cont_iter ............................   Passed    1.24 sec
+#11 14.21         Start   6: cont_info
+#11 15.42   6/139 Test   #6: cont_info ............................   Passed    1.20 sec
+#11 15.42         Start   7: cont_getid
+#11 16.62   7/139 Test   #7: cont_getid ...........................   Passed    1.20 sec
+#11 16.62         Start   8: cont_tags
+#11 17.84   8/139 Test   #8: cont_tags ............................   Passed    1.22 sec
+#11 17.84         Start   9: cont_del
+#11 19.04   9/139 Test   #9: cont_del .............................   Passed    1.20 sec
+#11 19.04         Start  10: obj_del
+#11 20.26  10/139 Test  #10: obj_del ..............................   Passed    1.22 sec
+#11 20.26         Start  11: open_obj
+#11 21.48  11/139 Test  #11: open_obj .............................   Passed    1.21 sec
+#11 21.48         Start  12: obj_iter
+#11 21.70  12/139 Test  #12: obj_iter .............................   Passed    0.22 sec
+#11 21.70         Start  13: obj_life
+#11 22.92  13/139 Test  #13: obj_life .............................   Passed    1.22 sec
+#11 22.92         Start  14: obj_buf
+#11 23.14  14/139 Test  #14: obj_buf ..............................   Passed    0.22 sec
+#11 23.14         Start  15: obj_tags
+#11 24.35  15/139 Test  #15: obj_tags .............................   Passed    1.21 sec
+#11 24.35         Start  16: kvtag_add_get
+#11 25.56  16/139 Test  #16: kvtag_add_get ........................   Passed    1.21 sec
+#11 25.56         Start  17: kvtag_query
+#11 25.72  17/139 Test  #17: kvtag_query ..........................   Passed    0.16 sec
+#11 25.72         Start  18: idioms_ci_test
+#11 29.11  18/139 Test  #18: idioms_ci_test .......................   Passed    3.39 sec
+#11 29.11         Start  19: obj_info
+#11 29.33  19/139 Test  #19: obj_info .............................   Passed    0.23 sec
+#11 29.33         Start  20: obj_put_data
+#11 30.77  20/139 Test  #20: obj_put_data .........................   Passed    1.43 sec
+#11 30.77         Start  21: obj_get_data
+#11 32.51  21/139 Test  #21: obj_get_data .........................   Passed    1.75 sec
+#11 32.51         Start  22: region_transfer
+#11 33.95  22/139 Test  #22: region_transfer ......................   Passed    1.44 sec
+#11 33.95         Start  23: region_transfer_status
+#11 35.41  23/139 Test  #23: region_transfer_status ...............   Passed    1.46 sec
+#11 35.41         Start  24: region_transfer_2D
+#11 36.85  24/139 Test  #24: region_transfer_2D ...................   Passed    1.44 sec
+#11 36.85         Start  25: region_transfer_3D
+#11 38.60  25/139 Test  #25: region_transfer_3D ...................   Passed    1.75 sec
+#11 38.60         Start  26: region_transfer_skewed
+#11 40.04  26/139 Test  #26: region_transfer_skewed ...............   Passed    1.44 sec
+#11 40.04         Start  27: region_transfer_partial
+#11 41.48  27/139 Test  #27: region_transfer_partial ..............   Passed    1.44 sec
+#11 41.48         Start  28: region_transfer_2D_partial
+#11 42.93  28/139 Test  #28: region_transfer_2D_partial ...........   Passed    1.44 sec
+#11 42.93         Start  29: region_transfer_3D_partial
+#11 44.37  29/139 Test  #29: region_transfer_3D_partial ...........   Passed    1.44 sec
+#11 44.37         Start  30: region_transfer_overlap
+#11 45.81  30/139 Test  #30: region_transfer_overlap ..............   Passed    1.43 sec
+#11 45.81         Start  31: region_transfer_overlap_2D
+#11 47.24  31/139 Test  #31: region_transfer_overlap_2D ...........   Passed    1.43 sec
+#11 47.24         Start  32: region_transfer_overlap_3D
+#11 49.00  32/139 Test  #32: region_transfer_overlap_3D ...........   Passed    1.76 sec
+#11 49.00         Start  33: region_transfer_merge
+#11 50.75  33/139 Test  #33: region_transfer_merge ................   Passed    1.75 sec
+#11 50.75         Start  34: region_transfer_write_read
+#11 52.50  34/139 Test  #34: region_transfer_write_read ...........   Passed    1.75 sec
+#11 52.50         Start  35: region_transfer_all

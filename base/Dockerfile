@@ -1,64 +1,60 @@
-# base/Dockerfile
-
 FROM ubuntu:22.04
 
-# avoid interactive prompts during install
-ENV DEBIAN_FRONTEND=noninteractive
-
-# install basic build tools and dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Install necessary packages
+RUN apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y \
     build-essential \
     cmake \
     git \
-    curl \
-    wget \
-    python3 \
-    python3-pip \
-    mpich \
     libtool \
-    pkg-config \
     autoconf \
     automake \
-    ca-certificates \
-    libssl-dev \
-    && rm -rf /var/lib/apt/lists/*
+    pkg-config \
+    libnuma-dev \
+    libboost-dev \
+    curl \
+    vim \
+    wget \
+    uuid-dev \
+    mpich && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# move to installation directory
-ENV WORK_SPACE=/opt/workspace
-RUN mkdir -p $WORK_SPACE
+# Set working directory
+WORKDIR /opt
 
-# install libfabric
-WORKDIR $WORK_SPACE
-RUN git clone https://github.com/ofiwg/libfabric
-WORKDIR $WORK_SPACE/libfabric
-# create installation dir
-ENV LIBFABRIC_INSTALL_DIR=$WORK_SPACE/libfabric/install
-RUN mkdir -p $LIBFABRIC_INSTALL_DIR
-# configure, build, and install
-RUN ./autogen.sh
-RUN ./configure --prefix=$LIBFABRIC_INSTALL_DIR CC=mpicc CFLAGS="-O2"
-RUN make -j$(nproc)
-RUN make install
-# test
-RUN make check
+RUN git clone https://github.com/ofiwg/libfabric && \
+    cd libfabric && \
+    git checkout v1.18.0 && \
+    ./autogen.sh && \
+    CC=mpicc ./configure --prefix=/opt/libfabric-install --enable-sockets=yes --enable-tcp=yes --enable-udp=yes --enable-rxm=yes && \
+    make -j$(nproc) && \
+    make install && \
+    make check
 
-# install mercury
-WORKDIR $WORK_SPACE
-RUN git clone https://github.com/mercury-hpc/mercury --recursive
-WORKDIR $WORK_SPACE/mercury
-RUN git checkout v2.2.0
-# create installation, build dir
-ENV MERCURY_INSTALL_DIR=$WORK_SPACE/mercury/install
-RUN mkdir -p $MERCURY_INSTALL_DIR $WORK_SPACE/mercury/build
-WORKDIR $WORK_SPACE/mercury/build
-# configure, build, and install
-RUN cmake -DCMAKE_INSTALL_PREFIX=$MERCURY_INSTALL_DIR -DCMAKE_C_COMPILER=mpicc -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=ON -DNA_USE_OFI=ON -DNA_USE_SM=OFF -DNA_OFI_TESTING_PROTOCOL=tcp ../
-RUN make -j$(nproc)
-RUN make install
-# test
-RUN ctest
+ENV PKG_CONFIG_PATH=/opt/libfabric-install/lib/pkgconfig:$PKG_CONFIG_PATH
+ENV LD_LIBRARY_PATH=/opt/libfabric-install/lib:$LD_LIBRARY_PATH
 
-# update library and bin paths
-ENV LD_LIBRARY_PATH=$LIBFABRIC_INSTALL_DIR/lib:$MERCURY_INSTALL_DIR/lib:$LD_LIBRARY_PATH
-ENV PATH=$LIBFABRIC_INSTALL_DIR/bin:$MERCURY_INSTALL_DIR/bin:$PATH
+# Build Mercury with libfabric
+RUN git clone --recursive https://github.com/mercury-hpc/mercury && \
+    cd mercury && \
+    git checkout v2.2.0 && \
+    mkdir build && cd build && \
+    cmake .. \
+      -DCMAKE_INSTALL_PREFIX=/opt/mercury-install \
+      -DCMAKE_C_COMPILER=mpicc \
+      -DBUILD_SHARED_LIBS=ON \
+      -DBUILD_TESTING=ON \
+      -DNA_USE_OFI=ON \ 
+      -DNA_USE_SM=OFF \
+      -DNA_OFI_TESTING_PROTOCOL=sockets \ 
+      -DLIBFABRIC_ROOT_DIR=/opt/libfabric-install && \
+    make -j$(nproc) && \
+    make install && \
+    ctest
+
+# Set environment variables
+ENV LD_LIBRARY_PATH=/opt/libfabric-install/lib:/opt/mercury-install/lib:$LD_LIBRARY_PATH
+ENV PKG_CONFIG_PATH=/opt/libfabric-install/lib/pkgconfig:/opt/mercury-install/lib/pkgconfig:$PKG_CONFIG_PATH
+ENV PATH=/opt/libfabric-install/bin:/opt/mercury-install/bin:$PATH
+ENV MERCURY_INSTALL_DIR=/opt/mercury-install
 
